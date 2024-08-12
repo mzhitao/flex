@@ -7,5 +7,6 @@ int main(int argc, char** argv)
     while (mylexer->yylex()) {
         std::cout << "token:" << mylexer->YYText() << std::endl;
     }
+
     return 0;
 }
