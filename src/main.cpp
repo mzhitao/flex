@@ -1,12 +1,9 @@
-#include <FlexLexer.h>
-#include <iostream>
+#include "Mylexer/Mylexer.h"
 
 int main(int argc, char** argv)
 {
-    FlexLexer* mylexer = new yyFlexLexer;
-    while (mylexer->yylex()) {
-        std::cout << "token:" << mylexer->YYText() << std::endl;
-    }
+    Mylexer mylexer;
 
+    mylexer.print();
     return 0;
 }

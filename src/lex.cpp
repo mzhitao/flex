@@ -1,6 +1,6 @@
-#line 2 "lex.cpp"
+#line 2 "src/lex.cpp"
 
-#line 4 "lex.cpp"
+#line 4 "src/lex.cpp"
 
 #define  YY_INT_ALIGNED short int
 
@@ -416,11 +416,11 @@ static const flex_int32_t yy_rule_can_match_eol[5] =
 #define yymore() yymore_used_but_not_detected
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
-#line 1 "word.l"
-#line 4 "word.l"
+#line 1 "src/word.l"
+#line 3 "src/word.l"
   #include "Mylexer/Token.h"
-#line 423 "lex.cpp"
-#line 424 "lex.cpp"
+#line 423 "src/lex.cpp"
+#line 424 "src/lex.cpp"
 
 #define INITIAL 0
 
@@ -552,9 +552,9 @@ YY_DECL
 		}
 
 	{
-#line 7 "word.l"
+#line 6 "src/word.l"
 
-#line 558 "lex.cpp"
+#line 558 "src/lex.cpp"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -623,28 +623,30 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 8 "word.l"
-{ return Token::WORD;}
+#line 7 "src/word.l"
+{return Token::WORD;}
 	YY_BREAK
 case 2:
 /* rule 2 can match eol */
 YY_RULE_SETUP
-#line 9 "word.l"
+#line 8 "src/word.l"
 { return Token::LINE;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 10 "word.l"
-{ return Token::OTHER_CHAR ;}
+#line 9 "src/word.l"
+{ return Token::CHAR;}
+	YY_BREAK
+case YY_STATE_EOF(INITIAL):
+#line 10 "src/word.l"
+{return EOF;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 11 "word.l"
+#line 11 "src/word.l"
 ECHO;
 	YY_BREAK
-#line 646 "lex.cpp"
-case YY_STATE_EOF(INITIAL):
-	yyterminate();
+#line 650 "src/lex.cpp"
 
 	case YY_END_OF_BUFFER:
 		{
@@ -1614,6 +1616,6 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 11 "word.l"
+#line 11 "src/word.l"
 
 
