@@ -1,0 +1,17 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-std=c++17",
+      "-Wall",
+      "-Isrc",
+      "-c",
+      "-o",
+      "build/Expr/ExprNodeBase.o",
+      "src/Expr/ExprNodeBase.cpp"
+    ],
+    "directory": "/home/mao/flex",
+    "file": "/home/mao/flex/src/Expr/ExprNodeBase.cpp",
+    "output": "/home/mao/flex/build/Expr/ExprNodeBase.o"
+  }
+]

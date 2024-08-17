@@ -1,4 +1,7 @@
 #pragma once
+//#include "Expr/ExprNodeBase.h"
+#include <algorithm>
+#include <charconv>
 #include <map>
 #include <string>
 
@@ -52,7 +55,7 @@ public:
 
     enum class Type   //运算符
     {
-        NONE,
+        UNKNOW,
         VAL,
         FUNC,
         SIGNE,   //符号
@@ -67,17 +70,20 @@ public:
     const std::string& getText() const { return text_; }
 
     int   getPriority() const;
-    Type  getTokenType() const;
+    Type  getType() const;
     Assoc getAssoc() const;
 
+    Token& operator=(const Token& t);
+    Token& operator=(Token&& t);
+
+    Token(Id id, const std::string text);
+    Token(Id id, std::string&& text);
+
+    Token(const Token& token);
+    Token(Token&& token);
 
 
-    Token() = delete;
-    Token(Id id, const std::string& text)
-        : id_(id)
-        , text_(text){};
-
-    ~Token();
+    //~Token();
 
 private:
     static const std::map<std::string, double> constMap;

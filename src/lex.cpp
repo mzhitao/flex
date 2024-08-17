@@ -624,18 +624,18 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 YY_RULE_SETUP
 #line 7 "src/word.l"
-{return Token::WORD;}
+{return Token::ID;}
 	YY_BREAK
 case 2:
 /* rule 2 can match eol */
 YY_RULE_SETUP
 #line 8 "src/word.l"
-{ return Token::LINE;}
+{ return Token::EOL;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
 #line 9 "src/word.l"
-{ return Token::CHAR;}
+{ return Token::DOT;}
 	YY_BREAK
 case YY_STATE_EOF(INITIAL):
 #line 10 "src/word.l"

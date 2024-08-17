@@ -4,8 +4,8 @@
 %}
 
 %%
-[a-zA-zA]+ {return Token::WORD;}
-\n { return Token::LINE;}
-. { return Token::CHAR;}
+[a-zA-zA]+ {return Token::ID;}
+\n { return Token::EOL;}
+. { return Token::DOT;}
 <<EOF>> {return EOF;}
 %%

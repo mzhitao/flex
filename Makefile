@@ -2,8 +2,9 @@
 CC = gcc
 CXX = g++
 
-CFLAGS = -std=c++17 -Wall -MMD -MP
-LDFLAGS =
+CXXFLAGS = -std=c++17 -Wall -MMD -MP
+CXXFLAGS += -I$(SRC_DIR)
+LDFLAGS = -lboost_system
 
 BUILD_DIR = build
 SRC_DIR = src
@@ -17,11 +18,14 @@ DEPS := $(patsubst $(SRC_DIR)/%.cpp, $(BUILD_DIR)/%.d, $(SRCS))
 EXE = $(BUILD_DIR)/main
 
 $(EXE): $(OBJS)
-	$(CXX) $(CFLAGS) $^ -o $(BUILD_DIR)/main
+	@mkdir -p $(@D)
+	$(info "building $@")
+	@$(CXX) $(CXXFLAGS) $^ -o $(BUILD_DIR)/main $(LDFLAGS)
 
 $(BUILD_DIR)/%.o:$(SRC_DIR)/%.cpp
 	@mkdir -p $(@D)
-	$(CXX) $(CFLAGS) -c $< -o $@
+	$(info "compiling $<")
+	@$(CXX) $(CXXFLAGS) -c $< -o $@ $(LDFLAGS)
 
 $(SRC_DIR)/lex.cpp:$(SRC_DIR)/word.l
 	flex -o $@ $<
